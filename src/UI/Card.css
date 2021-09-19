@@ -1,0 +1,34 @@
+.flex-container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* .flex-item {
+    padding-bottom: 50px;
+} */
+
+.flex-item label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+.flex-item input {
+    font: inherit;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 20rem;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+.card {
+    background-color: pink;
+    padding: 1rem;
+    margin: 2rem auto;
+    width: 50rem;
+    max-width: 95%;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+}
