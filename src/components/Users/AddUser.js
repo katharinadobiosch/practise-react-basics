@@ -22,15 +22,16 @@ const AddUser = (props) => {
             console.log("your age is invalid");
         }
         // console.log("button was clicked");
-        console.log(enteredUsername, enteredAge);
-
+        // console.log(enteredUsername, enteredAge);
         // const userData = {
         //     username: enteredUsername,
         //     age: enteredAge,
         // };
 
+        props.onAddUserData(enteredUsername, enteredAge);
+
         // // TO CLEAR INPUT FIELDS AFTER USER SUBMITTED DATA
-        // props.onAddUserData(userData);
+
         setEnteredUsername("");
         setEnteredAge("");
     };
