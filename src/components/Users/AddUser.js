@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import classes from "./AddUser.module.css";
 import Card from "../../UI/Card";
 import Button from "../../UI/Button";
+import ErrorModal from "../../UI/ErrorModal";
 
 const AddUser = (props) => {
     // INPUT FIELD USERNAME
@@ -47,35 +48,41 @@ const AddUser = (props) => {
     };
 
     return (
-        <Card>
-            <form onSubmit={addUserHandler}>
-                <div className={classes.card}>
-                    <div className={classes.flex_container}>
-                        <div className={classes.flex_item}>
-                            <label htmlFor="username">User Name</label>
-                            <input
-                                id="username"
-                                type="text"
-                                onChange={usernameChangeHandler}
-                                value={enteredUsername}
-                            />
-                        </div>
-                        <div className={classes.flex_item}>
-                            <label htmlFor="age">Age (Years)</label>
-                            <input
-                                id="age"
-                                type="number"
-                                onChange={ageChangeHandler}
-                                value={enteredAge}
-                            />
-                        </div>
-                        <div className={classes.flex_item}>
-                            <Button type="submit">Add User</Button>
+        <>
+            <ErrorModal
+                title="An error occured!"
+                message="Something went wrong!"
+            />
+            <Card>
+                <form onSubmit={addUserHandler}>
+                    <div className={classes.card}>
+                        <div className={classes.flex_container}>
+                            <div className={classes.flex_item}>
+                                <label htmlFor="username">User Name</label>
+                                <input
+                                    id="username"
+                                    type="text"
+                                    onChange={usernameChangeHandler}
+                                    value={enteredUsername}
+                                />
+                            </div>
+                            <div className={classes.flex_item}>
+                                <label htmlFor="age">Age (Years)</label>
+                                <input
+                                    id="age"
+                                    type="number"
+                                    onChange={ageChangeHandler}
+                                    value={enteredAge}
+                                />
+                            </div>
+                            <div className={classes.flex_item}>
+                                <Button type="submit">Add User</Button>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </form>
-        </Card>
+                </form>
+            </Card>
+        </>
     );
 };
 
